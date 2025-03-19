@@ -4,7 +4,7 @@ import { MdEdit, MdDelete } from "react-icons/md";
 import useMenuItems from "../hooks/useMenuItems";
 
 const menuItems = () => {
-  const { goToHospital, handleLogout } = useMenuItems();
+  const { goToHospital, handleLogout,goToHospitalForm } = useMenuItems();
 
 
   return [
@@ -20,18 +20,22 @@ const menuItems = () => {
       icon: <FaPlus size={40} className="text-black-200 p-2 rounded" />,
       title: "New Hospital",
       description: "Create Operation",
+      action: () => goToHospitalForm("registrar"),
+      
     },
     {
       id: 3,
       icon: <MdEdit size={40} className="text-black-200 p-2 rounded" />,
       title: "Update Hospital",
       description: "Update Operation",
+      action: () => goToHospitalForm("actualizar"), 
     },
     {
       id: 4,
       icon: <MdDelete size={40} className="text-black-200 p-2 rounded" />,
       title: "Delete Hospital",
       description: "Delete Operation",
+      action: goToHospital,
     },
     {
       id: 5,

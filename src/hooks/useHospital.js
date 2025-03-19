@@ -23,10 +23,22 @@ const useHospital = () => {
         setLoading(true);
         try {
             const response = await bdMuni.post("/hospital", hospitalData, getAuthHeaders());
-            setHospitals([...hospitals, response.data]); // Agregar nuevo hospital a la lista
+            setHospitals([...hospitals, response.data]);
             return response.data;
         } catch (err) {
             setError(err.response?.data?.error || "Error al registrar hospital");
+            return null;
+        } finally {
+            setLoading(false);
+        }
+    };
+    const getHospitalById = async (id) => {
+        setLoading(true);
+        try {
+            const response = await bdMuni.get(`/hospital/${id}`, getAuthHeaders());
+            return response.data;
+        } catch (err) {
+            setError(err.response?.data?.error || "Error al obtener hospital");
             return null;
         } finally {
             setLoading(false);
@@ -36,8 +48,8 @@ const useHospital = () => {
     const updateHospital = async (id, hospitalData) => {
         setLoading(true);
         try {
-            await bdMuni.put(`/hospital/${id}`, hospitalData, getAuthHeaders());
-            setHospitals(hospitals.map(h => (h.id === id ? { ...h, ...hospitalData } : h)));
+            const response = await bdMuni.put(`/hospital/${id}`, hospitalData, getAuthHeaders());
+            return response.data;
         } catch (err) {
             setError(err.response?.data?.error || "Error al actualizar hospital");
         } finally {
@@ -61,7 +73,7 @@ const useHospital = () => {
         getHospitals();
     }, []);
 
-    return { hospitals, loading, error, getHospitals, createHospital, updateHospital, deleteHospital };
+    return { hospitals, loading, error, getHospitals, createHospital, updateHospital, deleteHospital, getHospitalById };
 };
 
 export default useHospital;

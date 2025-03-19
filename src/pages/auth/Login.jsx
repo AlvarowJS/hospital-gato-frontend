@@ -28,8 +28,9 @@ export const Login = () => {
                         <label className="block text-sm font-medium text-gray-900">Email</label>
                         <input
                             type="email"
+                            placeholder='example@gmail.com'
                             {...register("email", { required: true })}
-                            className="block w-full rounded-md px-3 py-1.5 text-gray-900 outline-gray-300 focus:outline-indigo-600"
+                            className="block w-full rounded-md px-3 py-1.5 text-gray-900 bg-gray-100 focus:outline-indigo-600"
                         />
                     </div>
 
@@ -37,8 +38,9 @@ export const Login = () => {
                         <label className="block text-sm font-medium text-gray-900">Password</label>
                         <input
                             type="password"
+                            placeholder='Password'
                             {...register("password", { required: true })}
-                            className="block w-full rounded-md px-3 py-1.5 text-gray-900 outline-gray-300 focus:outline-indigo-600"
+                            className="block w-full rounded-md px-3 py-1.5 text-gray-900 bg-gray-100 focus:outline-indigo-600"
                         />
                     </div>
 
@@ -48,10 +50,18 @@ export const Login = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-white shadow-xs hover:bg-indigo-500"
+                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-white shadow-xs hover:bg-indigo-500 cursor-pointer"
                         >
                             {loading ? "Logging in..." : "Log in"}
                         </button>
+                    </div>
+                    <div>
+                        <p>
+                            user: jalvarojs123@hotmail.com
+                        </p>
+                        <p>
+                            password: Alva100@ing
+                        </p>
                     </div>
                 </form>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaHeartbeat } from "react-icons/fa";
-
+import { NavLink } from 'react-router-dom'
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -39,7 +39,7 @@ export const Navbar = () => {
 
                     <div className="hidden sm:block">
                         <div className="flex space-x-4">
-                            <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-black hover:text-white">Home</a>
+                            <NavLink to='/hospital-menu' className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-black hover:text-white">Home</NavLink>
                             <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-black hover:text-white">Contacto</a>
                             <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-black hover:text-white">Ingresar</a>
                         </div>
@@ -51,7 +51,7 @@ export const Navbar = () => {
             {menuOpen && (
                 <div className="sm:hidden" id="mobile-menu">
                     <div className="space-y-1 px-2 pb-3">
-                        <a href="#" className="block rounded-md bg-black-600 px-3 py-2 text-base font-medium text-white">Home</a>
+                        <NavLink to="/hospital-menu" className="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-200">Home</NavLink>
                         <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-200">Contacto</a>
                         <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-200">Ingresar</a>
                     </div>

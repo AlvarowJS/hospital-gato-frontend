@@ -7,6 +7,8 @@ const useMenuItems = () => {
 
   return {
     goToHospital: () => navigate("/hospital"),
+    // goToHospitalForm: () => navigate("/hospital-form"),
+    goToHospitalForm: (mode = "register") => navigate(`/hospital-form?mode=${mode}`),
     handleLogout: () => logout(),
   };
 };

@@ -4,7 +4,7 @@ import { FaChevronRight } from "react-icons/fa";
 export const HospitalMenuItem = ({ item }) => {
     
     return (
-        <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md w-full mb-1"
+        <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md w-full mb-1 cursor-pointer"
             onClick={item?.action}
         >
             <div className="flex items-center space-x-4">
