@@ -1,11 +1,15 @@
 import React from 'react'
-import { HospitalMenu } from '../../components/hospital/HospitalMenu'
+import HospitalSearch from '../../components/hospital/HospitalSearch'
+import { HospitalTable } from '../../components/hospital/HospitalTable'
 
 export const HospitalPage = () => {
     return (
-        <>
-            <HospitalMenu
-            />
+        <>         
+            <aside className='max-w-6xl mx-auto overflow-x-auto bg-white rounded-xl shadow mt-10'>
+                <HospitalSearch />
+                <HospitalTable />
+            </aside>
+
         </>
     )
 }
